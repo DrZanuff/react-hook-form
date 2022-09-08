@@ -593,6 +593,7 @@ export function createFormControl<
     value: K,
     options: U,
   ) => {
+    console.log('setValues FROM REACT HOOK FORM' , {name , value})
     for (const fieldKey in value) {
       const fieldValue = value[fieldKey];
       const fieldName = `${name}.${fieldKey}` as Path<TFieldValues>;
@@ -612,6 +613,7 @@ export function createFormControl<
     value,
     options = {},
   ) => {
+    console.log('setValue FROM REACT HOOK FORM' , {name , value})
     const field = get(_fields, name);
     const isFieldArray = _names.array.has(name);
     const cloneValue = cloneObject(value);
